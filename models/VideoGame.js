@@ -6,8 +6,8 @@ const VideoGameSchema = new Schema({
     title: { type: String, required: true, minLength: 3, maxLength: 100 },
     description: { type: String, required: true },
     category: [ {type: Schema.Types.ObjectId, ref: "Category"} ],
-    numberstocks: { type: Number},
-    price: { type: String, required: true },
+    numberstocks: { type: Number, required: true},
+    price: { type: Number, required: true },
 });
 
 VideoGameSchema.virtual('url').get(function () {

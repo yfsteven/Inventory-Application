@@ -22,8 +22,8 @@ async function main() {
   console.log("Debug: About to connect");
   await mongoose.connect(mongoDB);
   console.log("Debug: Should be connected?");
-  await createVideoGames();
   await createCategories();
+  await createVideoGames();
   console.log("Debug: Closing mongoose");
   mongoose.connection.close();
 }
@@ -49,13 +49,13 @@ async function videoGameCreate(index, title, description, category, numberstocks
 }
 
 
-async function createCategory() {
+async function createCategories() {
   console.log("Adding categories");
   await Promise.all([
-    categoryCreate(0, "Xbox"),
-    categoryCreate(1, "Playstation"),
-    categoryCreate(2, "Nintendo"),
-    categoryCreate(3, "PC"),
+    categoryCreate(0, "Xbox", "Console 1"),
+    categoryCreate(1, "Playstation", "Console 2"),
+    categoryCreate(2, "Nintendo", "Console 3"),
+    categoryCreate(3, "Steam", "Steam platform"),
   ]);
 }
 
@@ -65,7 +65,7 @@ async function createVideoGames() {
   await Promise.all([
     videoGameCreate(0,
       "Persona 3 Reload",
-      "Step into the shoes of a transfer student thrust into an unexpected fate when entering the hour "hidden" between one day and the next. Awaken an incredible power and chase the mysteries of the Dark Hour, fight for your friends, and leave a mark on their memories forever.",
+      "Step into the shoes of a transfer student thrust into an unexpected fate when entering the hour hidden between one day and the next. Awaken an incredible power and chase the mysteries of the Dark Hour, fight for your friends, and leave a mark on their memories forever.",
       [categories[0], categories[1], categories[3]],
       200,
       69.99

@@ -1,5 +1,9 @@
-const VideoGame = require("../models/VideoGame");
+const VideoGame = require("../models/videogame");
 const asyncHandler = require("express-async-handler");
+
+exports.index = asyncHandler(async (req, res, next) => {
+    res.send("Not implemented Homepage")
+});
 
 exports.videogame_list = asyncHandler(async (req, res, next) => {
     res.send("Not implemented vg list")

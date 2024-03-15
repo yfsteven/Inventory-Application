@@ -1,4 +1,4 @@
-const Category = require("../models/Category");
+const Category = require("../models/category");
 const asyncHandler = require("express-async-handler");
 
 exports.category_list = asyncHandler(async (req, res, next) => {

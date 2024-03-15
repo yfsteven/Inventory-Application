@@ -4,8 +4,8 @@
 // Get arguments passed on command line
 const userArgs = process.argv.slice(2);
 
-const VideoGame = require("./models/VideoGame");
-const Category = require("./models/Category");
+const VideoGame = require("./models/videogame");
+const Category = require("./models/category");
 
 
 const videogames = [];
@@ -88,14 +88,14 @@ async function createVideoGames() {
       "Pokémon Legends: Arceus",
       "Your adventure takes place in the expansive natural majesty of the Hisui region, where you embark on survey missions from your main base in Jubilife Village.  Mount Coronet rises from the center, surrounded on all sides by areas with distinct environments.",
       [categories[2]],
-      11,000,
+      19060,
       70.00
     ),
     videoGameCreate(4,
       "Marvel's Spider-Man 2",
       "Swing, jump and utilize the new Web Wings to travel across Marvel’s New York, quickly switching between Peter Parker and Miles Morales to experience different stories and epic new powers, as the iconic villain Venom threatens to destroy their lives, their city and the ones they love.",
       [categories[1]],
-      100,000,
+      10000,
       69.99
     ),
     videoGameCreate(5,

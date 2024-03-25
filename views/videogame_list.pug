@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  if videogame_list.length
+    ul
+      each game in videogame_list
+        li
+          h2 #{game.title}
+          p Description: #{game.description}
+          each cat, i in game.category
+            p #{cat.title}
+          p Number of Stocks: #{game.numberstocks}
+          p Price: $#{game.price}
+
+  else
+    p No videogames available.
